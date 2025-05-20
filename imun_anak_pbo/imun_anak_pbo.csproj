@@ -52,13 +52,19 @@
     <Compile Include="model\Anak_cls.cs" />
     <Compile Include="model\Catatan_imunisasi_cls.cs" />
     <Compile Include="model\Imunisasi_cls.cs" />
-    <Compile Include="model\Petugas_cls.cs" />
+    <Compile Include="model\Bidan_cls.cs" />
     <Compile Include="model\User_cls.cs" />
     <Compile Include="view\anak_frm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="view\anak_frm.Designer.cs">
       <DependentUpon>anak_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\bidan_frm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\bidan_frm2.Designer.cs">
+      <DependentUpon>bidan_frm2.cs</DependentUpon>
     </Compile>
     <Compile Include="view\catatan_imunisasi_frm.cs">
       <SubType>Form</SubType>
@@ -80,12 +86,6 @@
     <Compile Include="view\imunisasi_frm.Designer.cs">
       <DependentUpon>imunisasi_frm.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\petugas_frm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="view\petugas_frm.Designer.cs">
-      <DependentUpon>petugas_frm.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -95,6 +95,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="view\bidan_frm2.resx">
+      <DependentUpon>bidan_frm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\catatan_imunisasi_frm.resx">
+      <DependentUpon>catatan_imunisasi_frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\imunisasi_frm.resx">
+      <DependentUpon>imunisasi_frm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

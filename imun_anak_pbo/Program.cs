@@ -16,7 +16,7 @@ namespace imun_anak_pbo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new view.imunisasi_frm());
         }
     }
 }
