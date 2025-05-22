@@ -118,5 +118,21 @@ namespace imun_anak_pbo.model
             Query = "select * from imunisasi where nama_imunisasi like '" + nama + "%'";
             return server.eksekusiQuery(Query);
         }
+
+        public string ambilNamaImun(string nama)
+        {
+            string id = "";
+            Query = "SELECT imunisasi_id FROM imunisasi WHERE nama_imunisasi = '" + nama + "'";
+            DataTable data = server.eksekusiQuery(Query);
+
+            if (data.Rows.Count > 0)
+            {
+                id = data.Rows[0]["imunisasi_id"].ToString();
+            }
+
+            return id;
+        }
+
+
     }
 }

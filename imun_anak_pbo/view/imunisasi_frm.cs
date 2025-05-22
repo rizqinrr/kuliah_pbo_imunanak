@@ -29,18 +29,22 @@ namespace imun_anak_pbo.view
         }
         private void simpan_btn_Click(object sender, EventArgs e)
         {
-            imun.nama_imunisasi = imun_txt.Text; //Memanggil 
-            imun.deskripsi = imunDes_txt.Text;
-            imun.usia_anak = rentangUsia_txt.Text;
+            if (!imun.cekID(id_imun_lbl.Text))
+            { 
+                imun.nama_imunisasi = imun_txt.Text; //Memanggil 
+                imun.deskripsi = imunDes_txt.Text;
+                imun.usia_anak = rentangUsia_txt.Text;
 
-            if (imun.simpanImun() == true)
-            {
-                MessageBox.Show("Data Berhasil Disimpan.", "SIMPAN DATA",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                clear();
-                imun_txt.Focus();
-                tampilSemua();
 
+                if (imun.simpanImun() == true)
+                {
+                    MessageBox.Show("Data Berhasil Disimpan.", "SIMPAN DATA",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    clear();
+                    imun_txt.Focus();
+                    tampilSemua();
+
+                }
             }
         }
 
@@ -122,7 +126,7 @@ namespace imun_anak_pbo.view
             if (MessageBox.Show("Yakin data akan diubah?", "UBAH DATA",
                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-               
+
                 imun.nama_imunisasi = imun_txt.Text;
                 imun.deskripsi = imunDes_txt.Text;
                 imun.usia_anak = rentangUsia_txt.Text;

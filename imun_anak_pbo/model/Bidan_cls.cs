@@ -83,5 +83,37 @@ namespace imun_anak_pbo.model
             return server.eksekusiNonQuery(query) > 0;
         }
 
+        public string ambilNamaBidan(string id)
+        {
+            string nama = "";
+            DataTable data = new DataTable();
+
+            Query = "select nama_bidan from bidan where bidan_id='" + id + "'";
+            data = server.eksekusiQuery(Query);
+            if (data.Rows.Count > 0)
+            {
+                foreach (DataRow dt in data.Rows)
+                {
+                    nama = dt[0].ToString();
+                }
+            }
+
+            return nama;
+        }
+
+        public string ambilIdBidan(string nama)
+        {
+            string id = "";
+            Query = "SELECT bidan_id FROM bidan WHERE nama_bidan = '" + nama + "'";
+            DataTable data = server.eksekusiQuery(Query);
+
+            if (data.Rows.Count > 0)
+            {
+                id = data.Rows[0]["bidan_id"].ToString();
+            }
+
+            return id;
+        }
+
     }
 }
